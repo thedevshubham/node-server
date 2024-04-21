@@ -45,7 +45,7 @@ router.post("/log-user-details", (req, res) => {
           console.error("Error creating file:", err);
           return res.status(500).send("Error creating file");
         }
-        console.log("File created successfully");
+        console.log("File created successfully", JSON.stringify([userData]));
         res.json(userData);
       });
     } else {
