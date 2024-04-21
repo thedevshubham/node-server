@@ -45,7 +45,7 @@ router.post("/log-user-details", (req, res) => {
           console.error("Error creating file:", err);
           return res.status(500).send("Error creating file");
         }
-        console.log("File created successfully", userData);
+        console.log("File created successfully", JSON.stringify(userData));
         res.json(userData);
       });
     } else {
@@ -75,7 +75,7 @@ router.post("/log-user-details", (req, res) => {
             console.error("Error writing to file:", err);
             return res.status(500).send("Error writing to file");
           }
-          console.log("Data appended to file", userData);
+          console.log("Data appended to file", JSON.stringify(userData));
           res.json(userData);
         });
       });
